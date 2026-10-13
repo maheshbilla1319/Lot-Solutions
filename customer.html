@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Dashboard | LOT Solutions</title>
+    <meta name="description" content="Manage your LOT Solutions services, projects, requests, and customer profile.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+<body>
+
+<div class="customer-layout">
+
+    <!-- SIDEBAR -->
+     <aside class="sidebar" id="sidebar">
+             <a href="#overview" class="brand" aria-label="LOT Solutions Home">
+            <img src="assets/logo.webp" alt="LOT Solutions">
+        </a>
+        <p class="nav-heading">CUSTOMER SPACE</p>
+
+        <nav class="sidebar-nav" aria-label="Customer navigation">
+            <a href="#overview" class="nav-link active" data-section="overview">
+                <i class="fa-solid fa-house"></i>
+                <span>Overview</span>
+            </a>
+            <a href="#services" class="nav-link" data-section="services">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>My Services</span>
+                <span class="nav-count">03</span>
+            </a>
+            <a href="#requests" class="nav-link" data-section="requests">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>My Requests</span>
+            </a>
+            <a href="#invoices" class="nav-link" data-section="invoices">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Invoices</span>
+            </a>
+            <a href="#support" class="nav-link" data-section="support">
+                <i class="fa-regular fa-comments"></i>
+                <span>Help & Support</span>
+                <span class="nav-dot"></span>
+            </a>
+        </nav>
+
+        <p class="nav-heading settings-heading">PREFERENCES</p>
+
+        <nav class="sidebar-nav" aria-label="Account navigation">
+            <a href="#profile" class="nav-link" data-section="profile">
+                <i class="fa-regular fa-user"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="#settings" class="nav-link" data-section="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+
+        <div class="sidebar-help">
+            <div class="help-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>Need a hand?</h3>
+            <p>Our team is here to help with your projects.</p>
+            <a href="#support">Contact support <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+       <a href="login.html" class="logout-button" id="logoutButton">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    <span>Logout</span>
+</a>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="overview">
+
+        <!-- TOPBAR -->
+               
+    <header class="topbar">
+    <div class="topbar-left">
+        <button class="icon-button menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open sidebar"
+                aria-controls="sidebar"
+                aria-expanded="false"
+                onclick="window.location.href='404.html'">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="breadcrumb">
+            <span>Workspace</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <strong id="breadcrumbCurrent">Dashboard</strong>
+        </div>
+    </div>
+
+    <div class="topbar-right">
+        <label class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search"
+                   id="globalSearch"
+                   placeholder="Search dashboard..."
+                   aria-label="Search dashboard">
+            <kbd>⌕</kbd>
+        </label>
+
+        <button class="icon-button notification-button"
+                id="notificationButton"
+                type="button"
+                aria-label="Notifications"
+                title="Notifications"
+                onclick="window.location.href='404.html'">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-indicator"></span>
+        </button>
+
+        <div class="topbar-divider"></div>
+
+        <button class="topbar-profile"
+                id="topbarProfile"
+                type="button"
+                aria-label="Open profile menu"
+                onclick="window.location.href='404.html'">
+
+            <span class="profile-avatar small-avatar">LA</span>
+
+            <span class="topbar-profile-text">
+                <strong>STACKLY LOT Admin</strong>
+                <small>Admin account</small>
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+    </div>
+</header>
+
+        <div class="page-content">
+
+            <!-- WELCOME -->
+            <section class="welcome-section" data-aos="fade-up">
+                <div class="welcome-copy">
+                    <span class="eyebrow"><span class="live-dot"></span> YOUR CUSTOMER WORKSPACE</span>
+                    <h1>Welcome back,<br><span id="welcomeCustomerName">Jordan</span>.</h1>
+                    <p>Everything you need to manage your services, track progress, and connect with our team — all in one place.</p>
+
+                    <div class="welcome-actions">
+                        <a href="404.html" class="btn btn-primary">
+                            Explore services <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="404.html" class="btn btn-outline">
+                            <i class="fa-regular fa-message"></i> Get support
+                        </a>
+                    </div>
+                </div>
+
+                <div class="welcome-visual" aria-hidden="true">
+                    <div class="visual-grid"></div>
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+                    <div class="visual-core"><i class="fa-solid fa-cubes-stacked"></i></div>
+                    <div class="floating-card float-top">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span><strong>Workspace ready</strong><small>Your portal is active</small></span>
+                    </div>
+                    <div class="floating-card float-bottom">
+                        <span class="floating-mini-icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span><strong>Project overview</strong><small>Track your progress</small></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STATS -->
+            <section class="stats-grid" aria-label="Customer statistics">
+                <article class="stat-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="stat-heading">
+                        <span>Active services</span>
+                        <span class="stat-icon"><i class="fa-solid fa-layer-group"></i></span>
+                    </div>
+                    <h2 class="counter" data-target="3">0</h2>
+                    <p><span class="status-dot"></span> Currently running</p>
+                    <div class="stat-decoration"><span></span><span></span><span></span><span></span><span></span></div>
+                </article>
+
+                <article class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-heading">
+                        <span>Open requests</span>
+                        <span class="stat-icon"><i class="fa-solid fa-ticket"></i></span>
+                    </div>
+                    <h2 class="counter" data-target="2">0</h2>
+                    <p>Requests awaiting updates</p>
+                    <div class="stat-decoration"><span></span><span></span><span></span><span></span><span></span></div>
+                </article>
+
+                <article class="stat-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="stat-heading">
+                        <span>Completed projects</span>
+                        <span class="stat-icon"><i class="fa-solid fa-circle-check"></i></span>
+                    </div>
+                    <h2 class="counter" data-target="12">0</h2>
+                    <p>Successfully delivered</p>
+                    <div class="stat-decoration"><span></span><span></span><span></span><span></span><span></span></div>
+                </article>
+
+                <article class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-heading">
+                        <span>Support tickets</span>
+                        <span class="stat-icon"><i class="fa-solid fa-headset"></i></span>
+                    </div>
+                    <h2 class="counter" data-target="1">0</h2>
+                    <p>Ticket needs attention</p>
+                    <div class="stat-decoration"><span></span><span></span><span></span><span></span><span></span></div>
+                </article>
+            </section>
+
+            <!-- SERVICES -->
+            <section class="content-section" id="services">
+                <div class="section-heading" data-aos="fade-up">
+                    <div>
+                        <span class="section-kicker">WHAT WE DO FOR YOU</span>
+                        <h2>Your services<span>.</span></h2>
+                        <p>Quick access to your active solutions and project details.</p>
+                    </div>
+                    <a href="404.html" class="text-link">Request a service <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card service-featured" data-aos="fade-up" data-aos-delay="50">
+                        <div class="service-card-top">
+                            <span class="service-icon"><i class="fa-solid fa-code"></i></span>
+                            <span class="service-status"><i></i> Active</span>
+                        </div>
+                        <span class="service-category">DIGITAL SOLUTIONS</span>
+                        <h3>Website Development</h3>
+                        <p>Modern, responsive web experiences designed around your business needs.</p>
+                        <div class="service-progress">
+                            <div class="progress-label"><span>Project progress</span><strong>75%</strong></div>
+                            <div class="progress-track"><span style="--progress:75%"></span></div>
+                        </div>
+                        <a href="404.html" class="service-link">View project <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card-top">
+                            <span class="service-icon service-icon-dark"><i class="fa-solid fa-palette"></i></span>
+                            <span class="service-status"><i></i> Active</span>
+                        </div>
+                        <span class="service-category">CREATIVE STUDIO</span>
+                        <h3>UI/UX Design</h3>
+                        <p>Intuitive interfaces and thoughtful digital product experiences.</p>
+                        <div class="service-progress">
+                            <div class="progress-label"><span>Project progress</span><strong>60%</strong></div>
+                            <div class="progress-track"><span style="--progress:60%"></span></div>
+                        </div>
+                        <a href="404.html" class="service-link">View project <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="service-card-top">
+                            <span class="service-icon service-icon-dark"><i class="fa-solid fa-chart-simple"></i></span>
+                            <span class="service-status"><i></i> Active</span>
+                        </div>
+                        <span class="service-category">BUSINESS GROWTH</span>
+                        <h3>Digital Consulting</h3>
+                        <p>Practical strategies to improve workflows and support business growth.</p>
+                        <div class="service-progress">
+                            <div class="progress-label"><span>Project progress</span><strong>90%</strong></div>
+                            <div class="progress-track"><span style="--progress:90%"></span></div>
+                        </div>
+                        <a href="404.html" class="service-link">View project <i class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- REQUESTS -->
+            <section class="content-section" id="requests">
+                <div class="section-heading" data-aos="fade-up">
+                    <div>
+                        <span class="section-kicker">PROJECT ACTIVITY</span>
+                        <h2>Recent requests<span>.</span></h2>
+                        <p>Check the latest status of your service requests.</p>
+                    </div>
+                    <button class="btn btn-primary btn-small" id="newRequestButton" type="button">
+                        <i class="fa-solid fa-plus"></i> New request
+                    </button>
+                </div>
+
+                <div class="requests-panel" data-aos="fade-up" data-aos-delay="80">
+                    <div class="request-toolbar">
+                        <div class="request-tabs" role="group" aria-label="Filter requests">
+                            <button class="request-tab active" data-filter="all" type="button">All requests</button>
+                            <button class="request-tab" data-filter="In progress" type="button">In progress</button>
+                            <button class="request-tab" data-filter="Completed" type="button">Completed</button>
+                        </div>
+                        <span class="request-total" id="requestTotal">3 requests</span>
+                    </div>
+
+                    <div class="request-list" id="requestList">
+                        <article class="request-row" data-status="In progress">
+                            <span class="request-icon"><i class="fa-solid fa-laptop-code"></i></span>
+                            <div class="request-info">
+                                <strong>Website redesign</strong>
+                                <span>REQ-1042 · Development</span>
+                            </div>
+                            <span class="request-date">Oct 08, 2026</span>
+                            <span class="request-status status-progress">In progress</span>
+                            <button class="row-action request-details" type="button" aria-label="View Website redesign request" data-title="Website redesign" data-description="The website redesign is currently being developed. Contact your project manager for a detailed update.">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </article>
+
+                        <article class="request-row" data-status="In progress">
+                            <span class="request-icon request-icon-dark"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <div class="request-info">
+                                <strong>Landing page updates</strong>
+                                <span>REQ-1041 · Design</span>
+                            </div>
+                            <span class="request-date">Oct 06, 2026</span>
+                            <span class="request-status status-review">In review</span>
+                            <button class="row-action request-details" type="button" aria-label="View Landing page updates request" data-title="Landing page updates" data-description="Your landing page updates are under review. Further updates will be shared by the project team.">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </article>
+
+                        <article class="request-row" data-status="Completed">
+                            <span class="request-icon request-icon-dark"><i class="fa-solid fa-file-circle-check"></i></span>
+                            <div class="request-info">
+                                <strong>Initial consultation</strong>
+                                <span>REQ-1038 · Consulting</span>
+                            </div>
+                            <span class="request-date">Oct 02, 2026</span>
+                            <span class="request-status status-completed">Completed</span>
+                            <button class="row-action request-details" type="button" aria-label="View Initial consultation request" data-title="Initial consultation" data-description="Your initial consultation is marked as completed in this sample dashboard.">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </article>
+                    </div>
+
+                    <div class="empty-state" id="requestEmpty">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p>No matching requests found.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LOWER CONTENT -->
+            <section class="lower-grid">
+
+                <!-- PROFILE -->
+                <article class="profile-panel" id="profile" data-aos="fade-up">
+                    <div class="section-heading compact-heading">
+                        <div>
+                            <span class="section-kicker">ACCOUNT DETAILS</span>
+                            <h2>Your profile<span>.</span></h2>
+                        </div>
+                        <button class="icon-button" id="editProfileButton" type="button" aria-label="Edit profile">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </div>
+
+                    <div class="profile-banner">
+                        <div class="profile-avatar-large">JD</div>
+                        <div>
+                            <h3 id="profileDisplayName">Jordan Davis</h3>
+                            <p>LOT Solutions customer</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-details">
+                        <div><span>Email address</span><strong id="profileEmail">jordan@example.com</strong></div>
+                        <div><span>Customer ID</span><strong>LOT-CUS-1024</strong></div>
+                        <div><span>Account status</span><strong class="account-active"><i></i> Active</strong></div>
+                    </div>
+
+                    <a href="404.html" class="profile-link">Manage account <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <!-- SUPPORT -->
+                <article class="support-panel" id="support" data-aos="fade-up" data-aos-delay="100">
+                    <div class="support-visual">
+                        <div class="support-circle circle-one"></div>
+                        <div class="support-circle circle-two"></div>
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <span class="section-kicker">WE'RE HERE FOR YOU</span>
+                    <h2>Need a little<br>extra support?</h2>
+                    <p>Have a question about a project or service? Send our team a request and we'll help you find the next step.</p>
+                    <button class="btn btn-primary support-button" id="supportButton" type="button">
+                        Contact our team <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <div class="support-hours"><i class="fa-regular fa-clock"></i> Support availability depends on your service agreement.</div>
+                </article>
+            </section>
+
+            <!-- INVOICES -->
+            <section class="content-section invoice-section" id="invoices">
+                <div class="section-heading" data-aos="fade-up">
+                    <div>
+                        <span class="section-kicker">BILLING OVERVIEW</span>
+                        <h2>Recent invoices<span>.</span></h2>
+                        <p>Review your sample billing records.</p>
+                    </div>
+                </div>
+
+                <div class="invoice-panel" data-aos="fade-up">
+                    <div class="invoice-row">
+                        <span class="invoice-icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <div class="invoice-info">
+                            <strong>Website development</strong>
+                            <span>INV-2026-014 · Oct 05, 2026</span>
+                        </div>
+                        <strong class="invoice-amount">₹12,000</strong>
+                        <span class="invoice-status">Paid</span>
+                        <button class="row-action invoice-action" type="button" aria-label="View invoice details" data-invoice="INV-2026-014">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </button>
+                    </div>
+                    <div class="invoice-row">
+                        <span class="invoice-icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <div class="invoice-info">
+                            <strong>UI/UX design</strong>
+                            <span>INV-2026-012 · Sep 28, 2026</span>
+                        </div>
+                        <strong class="invoice-amount">₹8,500</strong>
+                        <span class="invoice-status">Paid</span>
+                        <button class="row-action invoice-action" type="button" aria-label="View invoice details" data-invoice="INV-2026-012">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SETTINGS -->
+            <section class="settings-panel" id="settings" data-aos="fade-up">
+                <div>
+                    <span class="section-kicker">PERSONAL PREFERENCES</span>
+                    <h2>Account settings<span>.</span></h2>
+                    <p>Manage your demo notification preferences.</p>
+                </div>
+                <label class="setting-option">
+                    <span><strong>Project notifications</strong><small>Receive updates about project activity.</small></span>
+                    <input type="checkbox" id="projectNotifications" checked>
+                    <span class="toggle-ui"></span>
+                </label>
+                <label class="setting-option">
+                    <span><strong>Support updates</strong><small>Receive updates when your requests change.</small></span>
+                    <input type="checkbox" id="supportNotifications" checked>
+                    <span class="toggle-ui"></span>
+                </label>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="customer-footer">
+                <a href="404.html" class="footer-brand">LOT <span>Solutions</span></a>
+                <p>© <span id="footerYear"></span> LOT Solutions. Customer portal demo.</p>
+                <a href="404.html">Need help? <i class="fa-solid fa-arrow-right"></i></a>
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<!-- NEW REQUEST MODAL -->
+<div class="modal-overlay" id="requestModal" aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
+        <button class="icon-button modal-close" id="closeRequestModal" type="button" aria-label="Close form">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <span class="modal-icon"><i class="fa-solid fa-paper-plane"></i></span>
+        <h2 id="requestModalTitle">Create a request</h2>
+        <p>Tell our team what you need. This demo stores requests only in the current browser session.</p>
+
+        <form id="requestForm">
+            <label for="requestTitle">Request title</label>
+            <input type="text" id="requestTitle" maxlength="100" placeholder="e.g. Website content update" required>
+
+            <label for="requestCategory">Service category</label>
+            <select id="requestCategory" required>
+                <option value="">Select a category</option>
+                <option>Website Development</option>
+                <option>UI/UX Design</option>
+                <option>Digital Consulting</option>
+                <option>General Support</option>
+            </select>
+
+            <label for="requestDescription">Description</label>
+            <textarea id="requestDescription" rows="4" maxlength="1000" placeholder="Describe what you need..." required></textarea>
+
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelRequest" type="button">Cancel</button>
+                <button class="btn btn-primary" type="submit">Submit request <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </form>
+    </section>
+</div>
+
+<!-- PROFILE MODAL -->
+<div class="modal-overlay" id="profileModal" aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+        <button class="icon-button modal-close" id="closeProfileModal" type="button" aria-label="Close profile form">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <span class="modal-icon"><i class="fa-regular fa-user"></i></span>
+        <h2 id="profileModalTitle">Edit your profile</h2>
+        <p>Update the sample customer details displayed in this browser.</p>
+
+        <form id="profileForm">
+            <label for="editCustomerName">Full name</label>
+            <input type="text" id="editCustomerName" maxlength="80" required>
+
+            <label for="editCustomerEmail">Email address</label>
+            <input type="email" id="editCustomerEmail" maxlength="150" required>
+
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="cancelProfile" type="button">Cancel</button>
+                <button class="btn btn-primary" type="submit">Save changes</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+<!-- DETAILS MODAL -->
+<div class="modal-overlay" id="detailsModal" aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+        <button class="icon-button modal-close" id="closeDetailsModal" type="button" aria-label="Close details">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <span class="modal-icon"><i class="fa-solid fa-circle-info"></i></span>
+        <h2 id="detailsTitle">Request details</h2>
+        <p id="detailsDescription"></p>
+        <div class="modal-actions">
+            <button class="btn btn-primary" id="closeDetailsButton" type="button">Done</button>
+        </div>
+    </section>
+</div>
+
+<div class="toast" id="customerToast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="customerToastMessage">Action completed.</span>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/customer.js"></script>
+</body>
+</html>
